@@ -14,7 +14,8 @@ class Shorten extends Component {
              alert('Please, enter your URL')
         }
          else {
-            await this.props.sendShortLink(this.state)
+            await this.props.sendShortLink(this.state);
+            this.setState({originalUrl: ''})
         }
     };
     inputChangeHandler = event => {
@@ -31,7 +32,7 @@ class Shorten extends Component {
                                 <h1>Shorten your link</h1>
                             </div>
                             <FormGroup className='d-flex justify-content-center'>
-                                <Input type="text" name="originalUrl" placeholder="Enter URL here" className='w-50' onChange={this.inputChangeHandler}/>
+                                <Input type="text" name="originalUrl" placeholder="Enter URL here" value={this.state.originalUrl} className='w-50' onChange={this.inputChangeHandler}/>
                                 <Button color="danger" className='ml-2'>Shorten!</Button>
                             </FormGroup>
                         </Form>
