@@ -39,7 +39,9 @@ class Shorten extends Component {
                         {this.props.link &&
                         <div className='d-flex justify-content-center' style={{flexDirection: 'column', alignItems: 'center'}}>
                             <h4>Your link now looks like this:</h4>
-                            <a href={`http://localhost:8000/short/${this.props.link.shortUrl}`}>http://localhost:8000/short/{this.props.link.shortUrl}</a>
+                            <a href={`http://localhost:8000/short/${this.props.link.shortUrl}`} target="_blank" rel="noopener noreferrer">
+                                http://localhost:8000/short/{this.props.link.shortUrl}
+                            </a>
                         </div>
                         }
                     </Col>
